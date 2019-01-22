@@ -13,4 +13,5 @@ def index(request):
 
 
 def about(request):
-    return HttpResponse("Rango says \"here is the about page.\"<br><a href=http://127.0.0.1:8000/rango>Index</a>")
+    context_dict = {'MEDIA_URL': "/media/"}
+    return render(request, 'rango/about.html', context=context_dict)
